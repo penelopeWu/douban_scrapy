@@ -38,7 +38,7 @@ class Top250Spider(CrawlSpider):  # 多页爬取继承CrawlSpider
                 full_name += name
             movie_url = movie.xpath('div[@class="hd"]/a/@href').extract_first   ()
             star = movie.xpath('div[@class="bd"]/div[@class="star"]/span[@class="rating_num"]/text()').extract_first()
-            quote = movie.xpath('div[@class="bd"]/p/span[@class="inq"]/text()').extract_first()
+            quote = movie.xpath('div[@class="bd"]/p/span[@class="inq"]/text()').extract()
             if quote:
                 quote = quote[0]
             else:
